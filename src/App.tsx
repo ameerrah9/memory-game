@@ -6,6 +6,12 @@ import { cardImages } from './Components/Images';
 function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
+
+  const handleChoice = (card) => {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  };
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
