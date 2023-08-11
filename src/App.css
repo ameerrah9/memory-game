@@ -48,3 +48,77 @@ button:hover {
   font-weight: bolder;
   font-size: 2rem;
 }
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+/* images */
+img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+/*  image card */
+.card {
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 9px 1px #324369;
+}
+
+.card img {
+  display: block;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* front of card  */
+.card .front {
+  transform: rotateY(90deg);
+  position: absolute;
+  transition: all ease-in 0.2s;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+/* back of card-cover */
+
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+
+.result {
+    margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+  .card-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 16vw);
+    grid-gap: 20px;
+  }
+}
+
+
+@media only screen and (min-width: 1001px) and (max-width: 2500px) {
+  .card-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 10vw);
+    grid-gap: 20px;
+  }
+}

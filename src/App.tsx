@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Header from './Components/Header';
+import Grid from './Components/Grid';
 import { cardImages } from './Components/Images';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [disabled, setDisable] = useState(false);
 
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
@@ -29,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <Header turns={turns} onShuffle={shuffleCards}/>
+      <Grid cards={cards} choiceOne={choiceOne} choiceTwo={choiceTwo} disabled={disabled} handleChoice={handleChoice} />
     </div>
   );
 }
